@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+
 class TitleScene :
     public GameObject
 {
@@ -18,5 +19,7 @@ public:
 
 	//ŠJ•ú
 	void Release() override;
+private:
+	int hPict_;
 };
 

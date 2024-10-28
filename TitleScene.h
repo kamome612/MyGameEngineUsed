@@ -20,6 +20,10 @@ public:
 	//開放
 	void Release() override;
 private:
-	int hPict_;
+	int tPict_; //タイトル画面の画像
+	int select_; //選択先
+	bool prevUpKey_;
+	bool prevDownKey_;
+	bool prevEnterKey_;
 };
 

@@ -15,6 +15,7 @@ void ChildOden::Initialize()
 {
 	hModel_ = Model::Load("Assets/Model/oden.fbx");
 	assert(hModel_ >= 0);
+	transform_.rotate_.x = 90;
 	SphereCollider* col = new SphereCollider(0.1f);
 	this->AddCollider(col);
 
@@ -22,9 +23,9 @@ void ChildOden::Initialize()
 
 void ChildOden::Update()
 {
-	transform_.rotate_.y++;
-	transform_.position_.y += 0.01f;
-	if (transform_.position_.y > 10.0f) {
+	//transform_.rotate_.y++;
+	transform_.position_.z += 0.02f;
+	if (transform_.position_.z > 10.0f) {
 		KillMe();
 	}
 }

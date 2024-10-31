@@ -16,8 +16,9 @@ void Player::Initialize()
 {
 	//ƒ‚ƒfƒ‹‚Ìƒ[ƒh
 	pModel_ = Model::Load("Assets/Model/oden.fbx");
-	//pModel_ = Model::Load("Assets/oden.fbx");
 	assert(pModel_ >= 0);
+	transform_.rotate_.x = 90;
+	transform_.scale_ = { 2.0,2.0,2.0 };
 }
 
 void Player::Update()
@@ -37,7 +38,7 @@ void Player::Update()
 		cOden->SetScale(0.5, 0.5, 0.5);
 	}
 
-	transform_.rotate_.y += 1;
+	//transform_.rotate_.y += 1;
 }
 
 void Player::Draw()

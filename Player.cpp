@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "ChildOden.h"
 
 Player::Player(GameObject* parent)
 	:GameObject(parent,"Player"),pModel_(-1)
@@ -28,6 +29,12 @@ void Player::Update()
 	//DÇâüÇµÇΩÇÁç∂Ç…êiÇﬁ
 	if (Input::IsKey(DIK_D)) {
 		transform_.position_.x += 0.1f;
+	}
+
+	if (Input::IsKeyDown(DIK_E)) {
+		ChildOden* cOden = Instantiate<ChildOden>(this);
+		cOden->SetPosition(transform_.position_);
+		cOden->SetScale(0.5, 0.5, 0.5);
 	}
 
 	transform_.rotate_.y += 1;

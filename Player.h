@@ -24,5 +24,6 @@ public:
 
 private:
 	int pModel_;
+	int coNum_;//q‚¨‚Å‚ñ‚Ì”­Ë‚Å‚«‚é”
 };
 

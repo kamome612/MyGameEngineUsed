@@ -14,7 +14,7 @@ TitleScene::TitleScene(GameObject* parent)
 void TitleScene::Initialize()
 {
 	//タイトル画像のロード
-	tPict_ = Image::Load("Assets/Image/title.png");
+	tPict_ = Image::Load("Assets/Image/title.PNG");
 	assert(tPict_ >= 0);
 }
 

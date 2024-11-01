@@ -25,7 +25,7 @@ void ChildOden::Update()
 {
 	//transform_.rotate_.y++;
 	transform_.position_.z += 0.02f;
-	if (transform_.position_.z > 10.0f) {
+	if (transform_.position_.z > 30.0f) {
 		KillMe();
 	}
 }
@@ -46,4 +46,5 @@ void ChildOden::OnCollision(GameObject* pTarget)
 	//“–‚½‚Á‚½Žž‚Ìˆ—
 	KillMe();
 	pTarget->KillMe();
+	killPacNum_++;
 }

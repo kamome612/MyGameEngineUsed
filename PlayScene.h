@@ -24,5 +24,6 @@ public:
 
 private:
 	float time_;
+	int hImage_;
 };
 

@@ -19,6 +19,7 @@ void Player::Initialize()
 	assert(pModel_ >= 0);
 	transform_.rotate_.x = 90;
 	transform_.scale_ = { 2.0,2.0,2.0 };
+	transform_.position_.y += 0.5;
 }
 
 void Player::Update()
@@ -33,9 +34,20 @@ void Player::Update()
 	}
 
 	if (Input::IsKeyDown(DIK_E)) {
-		ChildOden* cOden = Instantiate<ChildOden>(this);
-		cOden->SetPosition(transform_.position_);
-		cOden->SetScale(0.5, 0.5, 0.5);
+		if (coNum_ > 0) {
+			ChildOden* cOden = Instantiate<ChildOden>(this);
+			//Transform tmp = transform_;
+			//tmp.position_.y += 0.5;
+			cOden->SetPosition(transform_.position_);
+			cOden->SetScale(0.5, 0.5, 0.5);
+			coNum_--;
+		}
+	}
+
+	if (Input::IsKeyDown(DIK_R)) {
+		if (coNum_ < 7) {
+			coNum_++;
+		}
 	}
 
 	//transform_.rotate_.y += 1;

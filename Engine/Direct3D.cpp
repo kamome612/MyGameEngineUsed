@@ -273,7 +273,7 @@ void Direct3D::SetShader(SHADER_TYPE type)
 void Direct3D::BeginDraw()
 {
 	//”wŒi‚ÌF
-	float clearColor[4] = { 173/255.0, 216/255.0, 230/255.0, 1.0f };//R,G,B,A
+	float clearColor[4] = { 210/255.0, 180/255.0, 140/255.0, 1.0f };//R,G,B,A
 
 	//‰æ–Ê‚ðƒNƒŠƒA
 	pContext->ClearRenderTargetView(pRenderTargetView, clearColor);

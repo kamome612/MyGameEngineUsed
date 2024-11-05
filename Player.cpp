@@ -2,7 +2,6 @@
 #include "Engine/Model.h"
 #include "Engine/Input.h"
 #include "ChildOden.h"
-#include "Engine/SceneManager.h"
 #include "Engine/SphereCollider.h"
 
 Player::Player(GameObject* parent)
@@ -30,11 +29,15 @@ void Player::Update()
 {
 	//A‚ğ‰Ÿ‚µ‚½‚ç‰E‚Éi‚Ş
 	if (Input::IsKey(DIK_A)) {
-		transform_.position_.x -= 0.1f;
+		if (transform_.position_.x >= -3.0f) {
+			transform_.position_.x -= 0.1f;
+		}
 	}
 	//D‚ğ‰Ÿ‚µ‚½‚ç¶‚Éi‚Ş
 	if (Input::IsKey(DIK_D)) {
-		transform_.position_.x += 0.1f;
+		if (transform_.position_.x <= 3.0f) {
+			transform_.position_.x += 0.1f;
+		}
 	}
 
 	if (Input::IsKeyDown(DIK_E)) {
@@ -62,6 +65,4 @@ void Player::OnCollision(GameObject* pTarget)
 	//“–‚½‚Á‚½‚Ìˆ—
 	KillMe();
 	pTarget->KillMe();
-	SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-	pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 }

@@ -3,7 +3,7 @@
 #include "Engine/SphereCollider.h"
 
 Enemy::Enemy(GameObject* parent)
-	:GameObject(parent,"Enemy"),eModel_(-1)
+	:GameObject(parent,"Enemy"),eModel_(-1),speed_(0)
 {
 }
 
@@ -20,13 +20,17 @@ void Enemy::Initialize()
 	transform_.rotate_.y = 180;
 	SphereCollider* col = new SphereCollider(0.6f);
 	this->AddCollider(col);
+	speed_ = 0.08f;
 }
 
 void Enemy::Update()
 {
-	transform_.position_.z -= 0.08;
-	if (transform_.position_.z < 0.0f) {
-		KillMe();
+
+	if (FindObject("Player")) {
+		transform_.position_.z -= speed_;
+		if (transform_.position_.z < 0.0f) {
+			KillMe();
+		}
 	}
 }
 

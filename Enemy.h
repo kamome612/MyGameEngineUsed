@@ -22,7 +22,10 @@ public:
 	//ŠJ•ú
 	void Release() override;
 
+	void SetSpeed(float sp) { speed_ = sp; }
+
 private:
 	int eModel_;
+	float speed_;
 };
 

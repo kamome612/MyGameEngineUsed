@@ -23,7 +23,10 @@ public:
 	void Release() override;
 
 private:
-	float time_;
+	float eTime_;
 	int hImage_;
+	float timer_;
+	float spTimer_;
+	float eSpeed_;
 };
 

@@ -26,6 +26,7 @@ public:
 
 private:
 	int pModel_;
+	float timer_;
 	int coNum_;//q‚¨‚Å‚ñ‚Ì”­Ë‚Å‚«‚é”
 };
 

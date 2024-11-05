@@ -17,9 +17,14 @@ void GameOverScene::Initialize()
 void GameOverScene::Update()
 {
 	//ƒGƒ“ƒ^[‚ÅŒˆ’è
-	if (Input::IsKeyDown(DIK_RETURN)) {
+	if (Input::IsKeyDown(DIK_T)) {
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_TITLE);
+	}
+
+	if (Input::IsKeyDown(DIK_R)) {
+		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+		pSceneManager->ChangeScene(SCENE_ID_PLAY);
 	}
 }
 

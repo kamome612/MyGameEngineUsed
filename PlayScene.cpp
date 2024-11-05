@@ -3,6 +3,7 @@
 #include "Enemy.h"
 #include <random>
 #include "Engine/Image.h"
+#include "Engine/SceneManager.h"
 
 PlayScene::PlayScene(GameObject* parent)
 	:GameObject(parent, "PlayScene"), time_(0.0f),hImage_(-1)
@@ -26,10 +27,10 @@ void PlayScene::Update()
 		Enemy* e = Instantiate<Enemy>(this);
 		int tmp = rand() % 2;
 		if (tmp == 0) {
-			tmp = -(rand() % 4);
+			tmp = -(rand() % 2);
 		}
 		else {
-			tmp = rand() % 4;
+			tmp = rand() % 2;
 		}
 		e->SetPosition(2 * tmp, 0, 30);
 		tmp = rand() % 201 + 100;

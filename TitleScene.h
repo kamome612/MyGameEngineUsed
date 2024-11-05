@@ -24,6 +24,5 @@ private:
 	int select_; //‘I‘ğæ
 	bool prevUpKey_;
 	bool prevDownKey_;
-	bool prevEnterKey_;
 };
 

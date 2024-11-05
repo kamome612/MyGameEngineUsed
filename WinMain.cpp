@@ -14,10 +14,10 @@
 //定数宣言
 const wchar_t* WIN_CLASS_NAME = L"SampleGame";  //ウィンドウクラス名
 const wchar_t* APP_NAME = L"サンプルゲーム";    //アプリケーション名
-//const int WINDOW_WIDTH = 800; //ウィンドウの幅
-//const int WINDOW_HEIGHT = 600; //ウィンドウの高さ
-const int WINDOW_WIDTH = 960; //ウィンドウの幅
-const int WINDOW_HEIGHT = 720; //ウィンドウの高さ
+const int WINDOW_WIDTH = 800; //ウィンドウの幅
+const int WINDOW_HEIGHT = 600; //ウィンドウの高さ
+//const int WINDOW_WIDTH = 960; //ウィンドウの幅
+//const int WINDOW_HEIGHT = 720; //ウィンドウの高さ
 
 RootJob* pRootJob = nullptr;
 

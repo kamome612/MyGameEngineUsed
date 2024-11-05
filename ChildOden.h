@@ -9,7 +9,6 @@ class ChildOden :
 {
 	//FBX* pFbx;
 	int hModel_;
-	int killPacNum_;
 public:
 	//コンストラクタ
 	//引数:parent

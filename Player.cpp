@@ -2,6 +2,8 @@
 #include "Engine/Model.h"
 #include "Engine/Input.h"
 #include "ChildOden.h"
+#include "Engine/SceneManager.h"
+#include "Engine/SphereCollider.h"
 
 Player::Player(GameObject* parent)
 	:GameObject(parent,"Player"),pModel_(-1)
@@ -20,6 +22,8 @@ void Player::Initialize()
 	transform_.rotate_.x = 90;
 	transform_.scale_ = { 2.0,2.0,2.0 };
 	transform_.position_.y += 0.5;
+	SphereCollider* col = new SphereCollider(0.8f);
+	this->AddCollider(col);
 }
 
 void Player::Update()
@@ -34,24 +38,12 @@ void Player::Update()
 	}
 
 	if (Input::IsKeyDown(DIK_E)) {
-		//if (coNum_ > 0) {
-			ChildOden* cOden = Instantiate<ChildOden>(this);
-			Transform tmp = transform_;
-			tmp.position_.z += 1.0f;
-			cOden->SetPosition(tmp.position_);
-			//cOden->SetPosition(transform_.position_);
-			cOden->SetScale(0.5, 0.5, 0.5);
-			//coNum_--;
-		//}
+		ChildOden* cOden = Instantiate<ChildOden>(this);
+		Transform tmp = transform_;
+		tmp.position_.z += 2.0f;
+		cOden->SetPosition(tmp.position_);
+		cOden->SetScale(0.5, 0.5, 0.5);
 	}
-
-	/*if (Input::IsKeyDown(DIK_R)) {
-		if (coNum_ < 7) {
-			coNum_++;
-		}
-	}*/
-
-	//transform_.rotate_.y += 1;
 }
 
 void Player::Draw()
@@ -63,4 +55,13 @@ void Player::Draw()
 
 void Player::Release()
 {
+}
+
+void Player::OnCollision(GameObject* pTarget)
+{
+	//“–‚½‚Á‚½Žž‚Ìˆ—
+	KillMe();
+	pTarget->KillMe();
+	SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+	pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 }

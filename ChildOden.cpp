@@ -1,6 +1,7 @@
 #include "ChildOden.h"
 #include "Engine/FBX.h"
 #include "Engine/SphereCollider.h"
+#include "Player.h"
 
 ChildOden::ChildOden(GameObject* parent)
 	:GameObject(parent,"ChildOden"),hModel_(-1)
@@ -24,7 +25,7 @@ void ChildOden::Initialize()
 void ChildOden::Update()
 {
 	//transform_.rotate_.y++;
-	transform_.position_.z += 0.02f;
+	transform_.position_.z += 0.1f;
 	if (transform_.position_.z > 30.0f) {
 		KillMe();
 	}
@@ -46,5 +47,4 @@ void ChildOden::OnCollision(GameObject* pTarget)
 	//“–‚½‚Á‚½Žž‚Ìˆ—
 	KillMe();
 	pTarget->KillMe();
-	killPacNum_++;
 }

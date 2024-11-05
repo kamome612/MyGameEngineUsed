@@ -16,7 +16,7 @@ PlayScene::~PlayScene()
 void PlayScene::Initialize()
 {
 	Instantiate<Player>(this);
-	hImage_ = Image::Load("Assets/Image/finger.png");
+	//hImage_ = Image::Load("Assets/Image/finger.png");
 }
 
 void PlayScene::Update()
@@ -42,8 +42,8 @@ void PlayScene::Draw()
 {
 	Transform tmp;
 	tmp.scale_ = { 0.2,0.2,0.2 };
-	Image::SetTransform(hImage_, tmp);
-	Image::Draw(hImage_);
+	//Image::SetTransform(hImage_, tmp);
+	//Image::Draw(hImage_);
 }
 
 void PlayScene::Release()

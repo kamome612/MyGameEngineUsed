@@ -34,21 +34,22 @@ void Player::Update()
 	}
 
 	if (Input::IsKeyDown(DIK_E)) {
-		if (coNum_ > 0) {
+		//if (coNum_ > 0) {
 			ChildOden* cOden = Instantiate<ChildOden>(this);
-			//Transform tmp = transform_;
-			//tmp.position_.y += 0.5;
-			cOden->SetPosition(transform_.position_);
+			Transform tmp = transform_;
+			tmp.position_.z += 1.0f;
+			cOden->SetPosition(tmp.position_);
+			//cOden->SetPosition(transform_.position_);
 			cOden->SetScale(0.5, 0.5, 0.5);
-			coNum_--;
-		}
+			//coNum_--;
+		//}
 	}
 
-	if (Input::IsKeyDown(DIK_R)) {
+	/*if (Input::IsKeyDown(DIK_R)) {
 		if (coNum_ < 7) {
 			coNum_++;
 		}
-	}
+	}*/
 
 	//transform_.rotate_.y += 1;
 }
